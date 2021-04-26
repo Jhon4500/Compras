@@ -1,0 +1,43 @@
+﻿@model VehiculosSanJoaquinMVC.Models.Entities.Listas
+
+@{
+    ViewData["Title"] = "CrearListas";
+}
+
+<h1>CrearListas</h1>
+
+<h4>Listas</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CrearListas">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="LiNombre" class="control-label"></label>
+                <input asp-for="LiNombre" class="form-control" />
+                <span asp-validation-for="LiNombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LiActivo" class="control-label"></label>
+                <input asp-for="LiActivo" class="form-control" />
+                <span asp-validation-for="LiActivo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LiCodigoPadre" class="control-label"></label>
+                <input asp-for="LiCodigoPadre" class="form-control" />
+                <span asp-validation-for="LiCodigoPadre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

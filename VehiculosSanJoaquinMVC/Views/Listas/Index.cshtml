@@ -1,0 +1,90 @@
+﻿@section Styles{ }
+<!-- Content Wrapper. Contains page content -->
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0">Sistema Ventas </h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Starter Page</li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+    <!-- Main content -->
+    <div class="content">
+        <div class="container-fluid">
+
+           @model IEnumerable<VehiculosSanJoaquinMVC.Models.Entities.Listas>
+
+            @{
+                ViewData["Title"] = "Index";
+            }
+
+            
+
+            <p>
+                <a asp-action="Create">Create New</a>
+            </p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.LiCodigoPadre)
+                            
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.LiNombre)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.LiActivo)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LiCodigoPadre)
+                                
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LiNombre)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LiActivo)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.LiCodigo">Edit</a> |
+                                <a asp-action="Details" asp-route-id="@item.LiCodigo">Details</a> |
+                                <a asp-action="Delete" asp-route-id="@item.LiCodigo">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+
+
+
+
+
+
+        </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+@section Scripts{ }
+
+
